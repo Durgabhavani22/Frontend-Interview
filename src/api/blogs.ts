@@ -1,4 +1,6 @@
 import type { Blog } from "../types/blog"
+import axios from "axios";
+
 
 const API_URL = "http://localhost:3001/blogs"
 
@@ -14,6 +16,17 @@ export const getBlogById = async (id: number): Promise<Blog> => {
   return res.json()
 }
 
+export const createBlog = async (
+  blog: Omit<Blog, "id">
+): Promise<Blog> => {
+  const res = await fetch(API_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify(blog),
+  })
 
+  if (!res.ok) throw new Error("Failed to create blog")
+  return res.json()
+}
 
 export type { Blog }
