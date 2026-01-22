@@ -24,17 +24,24 @@ export default function App() {
               Here you can browse all the latest blogs, explore their content, and stay updated with trending topics.
             </p>
 
+
+
+  
+  <div className="marquee-content">
+       Stay updated with trending posts every day!
+    </div>
+
+
+
+
           </div>
 
-          {/* Two-panel layout */}
           <div className="grid grid-cols-12 gap-6">
 
-            {/* Left panel: blog list */}
             <aside className="col-span-12 md:col-span-4">
               <BlogList onSelect={setSelectedBlog} />
             </aside>
 
-            {/* Right panel: blog details */}
             <section className="col-span-12 md:col-span-8">
               <BlogDetail blog={selectedBlog} />
             </section>
