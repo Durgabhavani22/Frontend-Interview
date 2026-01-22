@@ -33,7 +33,7 @@ const CreateBlogModal = ({ onClose }: Props) => {
     }
 
     mutation.mutate({
-      id: Date.now().toString(),
+      id: Date.now(),
       title: form.title,
       author: form.author,
       description: form.description,
