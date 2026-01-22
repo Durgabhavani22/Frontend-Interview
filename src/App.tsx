@@ -27,9 +27,25 @@ export default function App() {
 
 
   
-  <div className="marquee-content">
-       Stay updated with trending posts every day!
-    </div>
+ <div
+  style={{
+    display: "inline-block",
+    whiteSpace: "nowrap",
+    transform: "translateX(-100%)",
+    animation: "scrollRight 6s linear infinite"
+  }}
+>
+  Stay updated with trending posts every day!
+  <style>
+    {`
+      @keyframes scrollRight {
+        0% { transform: translateX(-100%); }
+        100% { transform: translateX(100%); }
+      }
+    `}
+  </style>
+</div>
+
 
 
 
